@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Inugami-Sayo/doa6-profile-card/static/css/main.28070226.css",
+    "main.js": "/Inugami-Sayo/doa6-profile-card/static/js/main.fa9b73c1.js",
+    "static/js/453.c746c9e4.chunk.js": "/Inugami-Sayo/doa6-profile-card/static/js/453.c746c9e4.chunk.js",
+    "index.html": "/Inugami-Sayo/doa6-profile-card/index.html",
+    "main.28070226.css.map": "/Inugami-Sayo/doa6-profile-card/static/css/main.28070226.css.map",
+    "main.fa9b73c1.js.map": "/Inugami-Sayo/doa6-profile-card/static/js/main.fa9b73c1.js.map",
+    "453.c746c9e4.chunk.js.map": "/Inugami-Sayo/doa6-profile-card/static/js/453.c746c9e4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28070226.css",
+    "static/js/main.fa9b73c1.js"
+  ]
+}
