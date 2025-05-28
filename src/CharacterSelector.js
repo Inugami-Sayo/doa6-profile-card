@@ -34,18 +34,50 @@ const characters = [
     { id: "031", name: "Tamaki", image: "031_tamaki.png" }
 ];
 
-function CharacterSelector({ selectedCharacters, onCharacterSelect }) {
+function CharacterSelector({ selectedCharacters, mainCharacter, subCharacters, onCharacterSelect, selectionMode }) {
+    const getCharacterClass = (charId) => {
+        if (selectionMode === 'done') {
+            if (charId === mainCharacter) return 'character-main';
+            if (subCharacters.includes(charId)) return 'character-sub';
+            return 'character-unselected';
+        }
+        
+        if (selectedCharacters.includes(charId)) {
+            return 'character-selected';
+        }
+        
+        return 'character-available';
+    };
+
+    const isCharacterClickable = (charId) => {
+        return selectionMode !== 'done' && !selectedCharacters.includes(charId);
+    };
+
     return (
-        <div className="character-grid">
-            {characters.map((char) => (
-        <img
-        key={char.id}
-        src={`${process.env.PUBLIC_URL}/images/${char.image}`}
-        alt={char.name}
-        onClick={() => onCharacterSelect(char.id)}
-        className={selectedCharacters.includes(char.id) ? "selected" : "grayed-out"}
-        />
-            ))}
+        <div className="character-selector">
+            <div className="character-grid">
+                {characters.map((char) => (
+                    <div key={char.id} className="character-item">
+                        <img
+                            src={`${process.env.PUBLIC_URL}/images/${char.image}`}
+                            alt={char.name}
+                            onClick={() => isCharacterClickable(char.id) && onCharacterSelect(char.id)}
+                            className={`character-image ${getCharacterClass(char.id)} ${
+                                isCharacterClickable(char.id) ? 'clickable' : ''
+                            }`}
+                        />
+                        <div className="character-name">{char.name}</div>
+                        {char.id === mainCharacter && (
+                            <div className="character-role-badge main">メイン</div>
+                        )}
+                        {subCharacters.includes(char.id) && (
+                            <div className="character-role-badge sub">
+                                サブ{subCharacters.indexOf(char.id) + 1}
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
