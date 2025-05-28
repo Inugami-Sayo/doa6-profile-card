@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Inugami-Sayo.github.io/doa6-profile-card/static/css/main.28070226.css",
-    "main.js": "/Inugami-Sayo.github.io/doa6-profile-card/static/js/main.af8222ab.js",
-    "static/js/453.c746c9e4.chunk.js": "/Inugami-Sayo.github.io/doa6-profile-card/static/js/453.c746c9e4.chunk.js",
-    "index.html": "/Inugami-Sayo.github.io/doa6-profile-card/index.html",
-    "main.28070226.css.map": "/Inugami-Sayo.github.io/doa6-profile-card/static/css/main.28070226.css.map",
-    "main.af8222ab.js.map": "/Inugami-Sayo.github.io/doa6-profile-card/static/js/main.af8222ab.js.map",
-    "453.c746c9e4.chunk.js.map": "/Inugami-Sayo.github.io/doa6-profile-card/static/js/453.c746c9e4.chunk.js.map"
+    "main.css": "/static/css/main.28070226.css",
+    "main.js": "/static/js/main.ee4e6fa7.js",
+    "static/js/453.c746c9e4.chunk.js": "/static/js/453.c746c9e4.chunk.js",
+    "index.html": "/index.html",
+    "main.28070226.css.map": "/static/css/main.28070226.css.map",
+    "main.ee4e6fa7.js.map": "/static/js/main.ee4e6fa7.js.map",
+    "453.c746c9e4.chunk.js.map": "/static/js/453.c746c9e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.28070226.css",
-    "static/js/main.af8222ab.js"
+    "static/js/main.ee4e6fa7.js"
   ]
 }
