@@ -1,38 +1,399 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-group {
+    margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.character-selection-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #e8f4f8;
+    border-radius: 8px;
+}
+
+.selection-mode-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c5aa0;
+    margin-bottom: 10px;
+}
+
+.character-selection-status {
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.character-selection-status div {
+    margin-bottom: 5px;
+}
+
+.reset-button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.reset-button:hover {
+    background: #ff5252;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.character-item {
+    text-align: center;
+    position: relative;
+}
+
+.character-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+
+.character-image.clickable:hover {
+    transform: scale(1.05);
+}
+
+.character-image.character-main {
+    border: 3px solid #ff6b6b;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+.character-image.character-sub {
+    border: 3px solid #4ecdc4;
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+}
+
+.character-image.character-unselected {
+    opacity: 0.3;
+    filter: grayscale(100%);
+}
+
+.character-image.character-available {
+    opacity: 1;
+    filter: none;
+    border: 2px solid #ddd;
+}
+
+.character-name {
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: bold;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.character-role-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.character-role-badge.main {
+    background: #ff6b6b;
+}
+
+.character-role-badge.sub {
+    background: #4ecdc4;
+}
+
+.action-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.save-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.save-button:hover {
+    background: #45a049;
+}
+
+/* プロフィールカードのスタイル */
+.profile-card {
+    width: 700px;
+    height: 500px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border: 3px solid #333;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Noto Sans JP', sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    pointer-events: none;
+}
+
+.card-title {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding-bottom: 15px;
+    z-index: 1;
+    position: relative;
+}
+
+.player-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #00d4ff;
+}
+
+.player-id {
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.profile-content {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.profile-left {
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-display {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-character {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.main-character-image {
+    border-radius: 12px;
+    border: 3px solid #00d4ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3), 0 0 20px rgba(0, 212, 255, 0.3);
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/* メインキャラのサイズ調整 - サブキャラがいるかどうかで変更 */
+.main-character-image.with-subs {
+    width: 180px;
+    height: 180px;
+}
+
+.main-character-image.solo {
+    width: 250px;
+    height: 250px;
+}
+
+.main-character-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 8px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    color: #00d4ff;
+}
+
+.sub-characters {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.sub-character {
+    text-align: center;
+}
+
+.sub-character-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    border: 2px solid #4ecdc4;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3), 0 0 10px rgba(78, 205, 196, 0.2);
+    object-fit: cover;
+}
+
+.sub-character-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    color: #4ecdc4;
+}
+
+.profile-info {
+    background: rgba(255,255,255,0.1);
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+.info-label {
+    font-weight: 500;
+    font-size: 16px;
+    opacity: 0.9;
+    flex-shrink: 0;
+}
+
+.info-value {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+    margin-left: 15px;
+    word-wrap: break-word;
+    color: #00d4ff;
+}
+
+.free-text {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    flex: 1;
+    border: 1px solid rgba(255,255,255,0.1);
+    min-height: 80px;
+}
+
+.free-text-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.free-text-content {
+    font-size: 15px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    font-weight: 400;
 }
