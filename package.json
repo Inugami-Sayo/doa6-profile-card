@@ -2,7 +2,7 @@
   "name": "doa6-profile-card",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Inugami-Sayo.github.io",
+  "homepage": "https://inugami-sayo.github.io/doa6-profile-card.github.io",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
