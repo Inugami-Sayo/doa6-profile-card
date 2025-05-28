@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/doa6-profile-card.github.io/static/css/main.28070226.css",
-    "main.js": "/doa6-profile-card.github.io/static/js/main.dca158a0.js",
+    "main.js": "/doa6-profile-card.github.io/static/js/main.3708fa3e.js",
     "static/js/453.c746c9e4.chunk.js": "/doa6-profile-card.github.io/static/js/453.c746c9e4.chunk.js",
     "index.html": "/doa6-profile-card.github.io/index.html",
     "main.28070226.css.map": "/doa6-profile-card.github.io/static/css/main.28070226.css.map",
-    "main.dca158a0.js.map": "/doa6-profile-card.github.io/static/js/main.dca158a0.js.map",
+    "main.3708fa3e.js.map": "/doa6-profile-card.github.io/static/js/main.3708fa3e.js.map",
     "453.c746c9e4.chunk.js.map": "/doa6-profile-card.github.io/static/js/453.c746c9e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.28070226.css",
-    "static/js/main.dca158a0.js"
+    "static/js/main.3708fa3e.js"
   ]
 }
