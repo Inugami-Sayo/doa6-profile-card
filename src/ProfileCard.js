@@ -48,10 +48,22 @@ function ProfileCard({ formData }) {
     return (
         <div id="profileCard" className="profile-card">
             <div className="card-title">DEAD OR ALIVE 6 Profile Card</div>
-            
             <div className="profile-header">
                 <h2 className="player-name">{formData.playerName || 'プレイヤーネーム'}</h2>
-                <div className="player-id">ID: {formData.playerId || 'ID未入力'}</div>
+                <div className="player-ids">
+                    {(() => {
+                        const ids = [];
+                        if (formData.steamId) ids.push(`Steam ID: ${formData.steamId}`);
+                        if (formData.psId) ids.push(`PS ID: ${formData.psId}`);
+                        if (formData.xboxId) ids.push(`Xbox ID: ${formData.xboxId}`);
+                        if (formData.xId) ids.push(`X ID: ${formData.xId}`);
+                        if (ids.length > 0) {
+                            return <div className="id-row">{ids.join(' / ')}</div>;
+                        } else {
+                            return <div className="id-row">ID未入力</div>;
+                        }
+                    })()}
+                </div>
             </div>
 
             <div className="profile-content">
