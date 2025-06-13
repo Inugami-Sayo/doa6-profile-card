@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/doa6-profile-card.github.io/static/css/main.28070226.css",
-    "main.js": "/doa6-profile-card.github.io/static/js/main.3708fa3e.js",
+    "main.css": "/doa6-profile-card.github.io/static/css/main.bcdfe1d6.css",
+    "main.js": "/doa6-profile-card.github.io/static/js/main.3e17e305.js",
     "static/js/453.c746c9e4.chunk.js": "/doa6-profile-card.github.io/static/js/453.c746c9e4.chunk.js",
     "index.html": "/doa6-profile-card.github.io/index.html",
-    "main.28070226.css.map": "/doa6-profile-card.github.io/static/css/main.28070226.css.map",
-    "main.3708fa3e.js.map": "/doa6-profile-card.github.io/static/js/main.3708fa3e.js.map",
+    "main.bcdfe1d6.css.map": "/doa6-profile-card.github.io/static/css/main.bcdfe1d6.css.map",
+    "main.3e17e305.js.map": "/doa6-profile-card.github.io/static/js/main.3e17e305.js.map",
     "453.c746c9e4.chunk.js.map": "/doa6-profile-card.github.io/static/js/453.c746c9e4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.28070226.css",
-    "static/js/main.3708fa3e.js"
+    "static/css/main.bcdfe1d6.css",
+    "static/js/main.3e17e305.js"
   ]
 }
