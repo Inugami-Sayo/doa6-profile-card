@@ -42,7 +42,10 @@ const characters = [
 function App() {
   const [formData, setFormData] = useState({
     playerName: '',
-    playerId: '',
+    steamId: '',
+    psId: '',
+    xboxId: '',
+    xId: '',
     freeText: '',
     fightingGameHistory: '',
     doaSeriesHistory: '',
@@ -158,14 +161,37 @@ function App() {
     </div>
 
     <div className="form-group">
-    <label>ID:</label>
-    <input 
-    type="text" 
-    name="playerId" 
-    placeholder="ID" 
-    value={formData.playerId} 
-    onChange={handleInputChange} 
-    />
+      <label>ID:</label>
+      <div className="id-inputs">
+        <input 
+          type="text" 
+          name="steamId" 
+          placeholder="Steam ID" 
+          value={formData.steamId || ''} 
+          onChange={handleInputChange} 
+        />
+        <input 
+          type="text" 
+          name="psId" 
+          placeholder="PS ID" 
+          value={formData.psId || ''} 
+          onChange={handleInputChange} 
+        />
+        <input 
+          type="text" 
+          name="xboxId" 
+          placeholder="Xbox ID" 
+          value={formData.xboxId || ''} 
+          onChange={handleInputChange} 
+        />
+        <input 
+          type="text" 
+          name="xId" 
+          placeholder="X ID" 
+          value={formData.xId || ''} 
+          onChange={handleInputChange} 
+        />
+      </div>
     </div>
 
     <div className="form-group">
